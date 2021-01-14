@@ -2,7 +2,7 @@ FROM nginx:1.15-alpine
 
 RUN apk add --no-cache nodejs yarn
 
-RUN yarn global add @beam-australia/react-env
+RUN yarn global add @estyrke/react-env
 
 ADD nginx.conf /etc/nginx/nginx.conf
 

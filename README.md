@@ -1,14 +1,14 @@
 # React Env - Runtime Environment Configuration
 
-[![Build Status](https://travis-ci.org/beam-australia/react-env.svg?branch=master)](https://travis-ci.org/beam-australia/react-env)
-[![npm version](https://badge.fury.io/js/%40beam-australia%2Freact-env.svg)](https://badge.fury.io/js/%40beam-australia%2Freact-env)
-[![Coverage Status](https://coveralls.io/repos/github/beam-australia/react-env/badge.svg?branch=2.0.2)](https://coveralls.io/github/beam-australia/react-env?branch=2.0.2)
+[![Build Status](https://travis-ci.org/estyrke/react-env.svg?branch=master)](https://travis-ci.org/estyrke/react-env)
+[![npm version](https://badge.fury.io/js/%40estyrke%2Freact-env.svg)](https://badge.fury.io/js/%40estyrke%2Freact-env)
+[![Coverage Status](https://coveralls.io/repos/github/estyrke/react-env/badge.svg?branch=2.0.2)](https://coveralls.io/github/estyrke/react-env?branch=2.0.2)
 
 Allows your react app's environment variables to be populated at **run-time** rather then **build-time**. Works with client and server rendered frameworks.
 
-* Example using [Create React APP](examples/create-react-app/README.md) (see README.md)
+- Example using [Create React APP](examples/create-react-app/README.md) (see README.md)
 
-* Example using [Next.js](examples/next.js/README.md) (see README.md)
+- Example using [Next.js](examples/next.js/README.md) (see README.md)
 
 ### Overview
 
@@ -26,16 +26,16 @@ REACT_APP_NOT_SECRET_CODE="1234"
 becomes...
 
 ```jsx
-import env from "@beam-australia/react-env";
+import env from "@estyrke/react-env";
 
-export default props => (
+export default (props) => (
   <div>
     <small>
       Works in the browser: <b>{env("CRA")}</b>.
     </small>
     <small>
       Also works for server side rendering: <b>{env("NEXT")}</b>.
-    </small>    
+    </small>
     <form>
       <input type="hidden" defaultValue={env("NOT_SECRET_CODE")} />
     </form>
@@ -55,21 +55,20 @@ e.g. `.env.development.local, .env.development, .env.local, .env`
 
 ### Arguments and parameters
 
-
 ```bash
 $ react-env <command with arguments> --env /path/to/.env.foo --env /path/to/.env.bar --dest /path/to/build
 ```
 
 This will generate a `env.js` file in the dest directory `/path/to/build` and then run the command. The command will have all the environment variable available in `process.env`, great for server side rending and other use-cases.
 
-* `<command>` 
+- `<command>`
 
 You may pass a command, such as a nodejs entry file to the `react-env` cli tool. The command will have all the environment variable available in `process.env`, great for server side rending and other use-cases.
 
-* `--env` **(default: null)**
+- `--env` **(default: null)**
 
 Read in another `.env` file for populating `env.js`. You may include multiple env files.
 
-* `--dest` **(default: ./public)**
+- `--dest` **(default: ./public)**
 
 Change the default destination for generating the `env.js` file

@@ -1,13 +1,13 @@
 import "isomorphic-fetch";
 import React from "react";
 import Head from "next/head";
-import env from "@beam-australia/react-env";
+import env from "@estyrke/react-env";
 
 const styles = {
   padding: 30,
   margin: 30,
   backgroundColor: "rgba(238, 238, 238, 0.39)",
-  fontFamily: "monospace"
+  fontFamily: "monospace",
 };
 
 export default class extends React.Component {
@@ -34,7 +34,7 @@ export default class extends React.Component {
         <hr />
         <h3>Todos</h3>
         <ul>
-          {this.props.todos.slice(0, 5).map(todo => (
+          {this.props.todos.slice(0, 5).map((todo) => (
             <li key={todo.id}>{todo.title}</li>
           ))}
         </ul>

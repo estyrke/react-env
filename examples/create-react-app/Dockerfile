@@ -14,7 +14,7 @@ ADD . .
 RUN yarn build
 
 # Create deployable image
-FROM beamaustralia/react-env:latest
+FROM estyrke/react-env:latest
 
 WORKDIR /var/www
 

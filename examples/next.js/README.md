@@ -12,7 +12,6 @@ In a new Next.js installation you first need to create a `static` directory wher
 
 Next we need to include this file in the head of our pages:
 
-
 ```javascript
 import React from "react";
 import Head from "next/head";
@@ -24,15 +23,15 @@ export default (props) => (
     </Head>
     <h1>My Page</h1>
   </div>
-)
+);
 ```
 
 Install the package:
 
 ```bash
-yarn add @beam-australia/react-env --dev
+yarn add @estyrke/react-env --dev
 ## Or
-npm install @beam-australia/react-env --save-dev
+npm install @estyrke/react-env --save-dev
 ```
 
 Change your `package.json` scripts file to look like the following:
@@ -44,14 +43,14 @@ Change your `package.json` scripts file to look like the following:
     "dev": "react-env next --dest ./static",
     "build": "next build",
     "start": "react-env next start --dest ./static"
-  },  
+  },
   // ...
 }
 ```
 
 ### Accessing values
 
-In the browser your variables will be available on the `window._env` object e.g. `window._env.REACT_APP_FOO`. On the server the same variables will be available on `process.env` e.g. `process.env.REACT_APP_FOO`. 
+In the browser your variables will be available on the `window._env` object e.g. `window._env.REACT_APP_FOO`. On the server the same variables will be available on `process.env` e.g. `process.env.REACT_APP_FOO`.
 
 We Have included a helper function to easily retrieve these values:
 
@@ -65,16 +64,16 @@ REACT_APP_NOT_SECRET_CODE="1234"
 becomes...
 
 ```jsx
-import env from "@beam-australia/react-env";
+import env from "@estyrke/react-env";
 
-export default props => (
+export default (props) => (
   <div>
     <small>
       This is: <b>{env("FOO")}</b>.
     </small>
     <small>
       Current environment: <b>{env("NODE_ENV")}</b>.
-    </small>    
+    </small>
     <form>
       <input type="hidden" defaultValue={env("NOT_SECRET_CODE")} />
     </form>
